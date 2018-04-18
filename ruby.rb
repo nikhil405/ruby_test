@@ -9,25 +9,16 @@
   # "box2" => weight2,
   # ...
 # }
-# text={
-# 	weight => ['box','box1','box2','box3','box4'],
-# 	weight2 => ['box5','box6','box7','box8','box9']
-# }
-# p text.each_with_object({}) {
-# 	|(x,arr),h| arr.each{|k| h|k| = x}
-# }
-# vals_to_keys = {
-#   1 => [*'A'],
-#   2 => [*'D'],
-#   3 => [*'G'],
-#   4 => ['dog'],
-#   5 => [1,2,3,4]
-# }
 
-# p vals_to_keys.each_with_object({}) { 
-# 	|(v,arr),h| arr.each { |k| h[k] = v } }
 
 h={"box"=>1,"box2"=>2,"box3"=>4,"box4"=>5,"box6"=>6,
 "box7"=>7,"box8"=>8,"box9"=>9,"box10"=>10}
-p m=h.key(h.values.max)
-p l=h.key(h.values.min)
+# p h.sort_by{ |k,v| v }
+# m=Hash.new
+# p m
+# p m=h.key(h.values.max_min)
+# sprintf(m)
+# p h.key(h.values.min)
+
+puts "maximum value :#{ h.select {|x,i| i== h.values.max}}"
+puts "minimum values :#{ h.select {|x,i| i== h.values.min}}"
